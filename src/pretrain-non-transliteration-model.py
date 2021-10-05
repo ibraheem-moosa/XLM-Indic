@@ -5,7 +5,7 @@ import regex as re
 import random
 from transformers import AlbertForPreTraining, AlbertConfig, AlbertTokenizer, TrainingArguments, Trainer, DataCollatorForLanguageModeling, TrainerCallback
 
-tokenizer = AlbertTokenizer('no-trans-tokenizer.model', model_max_length=512, do_lower_case=False, keep_accents=True)
+tokenizer = AlbertTokenizer('non-transliteration-tokenizer.model', model_max_length=512, do_lower_case=False, keep_accents=True)
 dataset = load_from_disk('no-transliteration-split-merge-sentences/')
 dataset = dataset['train']
 
