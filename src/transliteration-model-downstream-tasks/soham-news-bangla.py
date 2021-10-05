@@ -123,3 +123,8 @@ for seed in [101, 102, 103, 104, 105, 106, 107, 108, 109]:
     accuracies.append(metric['test_accuracy'])
     f1s.append(metric['test_f1'])
     preds.append(predictions)
+
+print('Metric STATS Avg Acc: {} Std Acc{}: Avg F1: {} Std F1: {}'.format(np.mean(accuracies), np.std(accuracies), np.mean(f1s), np.std(f1s)))
+ensemble_predictions = get_ensemble_predictions(preds)
+ensemble_metric = compute_metrics(EvalPrediction(ensemble_predictions, labels))
+print('Metric for ENSEMBLE Acc: {} F1: {}'.format(ensemble_metric['accuracy'], ensemble_metric['f1']))
