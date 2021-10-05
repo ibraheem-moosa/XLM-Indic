@@ -79,7 +79,7 @@ f1s = []
 preds = []
 for seed in [101, 102, 103, 104, 105, 106, 107, 108, 109]:
     set_seed(seed)
-    model = AlbertForSequenceClassification.from_pretrained('../transliteration-model-outputs//checkpoint-1000000/checkpoint-1000000', 
+    model = AlbertForSequenceClassification.from_pretrained('../transliteration-model-outputs/checkpoint-1000000/checkpoint-1000000', 
                                                             output_attentions=False, num_labels=num_classes)
     with torch.no_grad():
         model.classifier.bias.copy_(torch.log(label_freqs))
