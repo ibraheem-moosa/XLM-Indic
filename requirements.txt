@@ -1,0 +1,5 @@
+datasets=1.8.0
+transformers=4.8
+sentencepiece=0.1.96
+indic-nlp-library
+aksharamukha
